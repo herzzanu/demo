@@ -1,0 +1,11 @@
+<table ...attributes>
+  <thead>
+    {{yield to='header'}}
+  </thead>
+
+  <tbody>
+    {{#each @items as |item index|}}
+      {{yield item index to='row'}}
+    {{/each}}
+  </tbody>
+</table>
