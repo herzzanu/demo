@@ -1,0 +1,23 @@
+<tr local-class='row {{if @isSelected "selected"}}' ...attributes>
+  <td>
+    <CheckboxInput
+      @checked={{@isSelected}}
+      @onToggle={{fn @toggleSelectItem @item.id}}
+      data-test-select-item
+    />
+  </td>
+  <td data-test-item-name>{{@item.name}}</td>
+  <td data-test-item-device>{{@item.device}}</td>
+  <td data-test-item-path>{{@item.path}}</td>
+  <td data-test-status>
+    <div local-class='status'>
+      <span
+        local-class='indicator
+              {{if (equal @item.status "available") "success"}}
+              {{if (equal @item.status "scheduled") "warning"}}'
+        data-test-status-indicator
+      ></span>
+      {{capitalize @item.status}}
+    </div>
+  </td>
+</tr>

@@ -1,0 +1,28 @@
+.row:hover {
+  background-color: var(--grey-200);
+}
+
+.selected {
+  background-color: var(--grey-100);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  background-color: var(--black);
+  border-radius: 50%;
+}
+
+.success {
+  background-color: var(--success);
+}
+
+.warning {
+  background-color: var(--warning);
+}
