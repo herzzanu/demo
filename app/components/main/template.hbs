@@ -1,0 +1,19 @@
+<Selector @items={{@items}} as |selector|>
+  <Header
+    @selectedItems={{selector.selectedItems}}
+    @selectedItemsIds={{selector.selectedItemsIds}}
+    @isAllSelected={{selector.isAllSelected}}
+    @isSomeSelected={{selector.isSomeSelected}}
+    @toggleSelectAll={{selector.toggleSelectAll}}
+    @downloadSelectedItems={{this.downloadSelectedItems}}
+    data-test-header
+  />
+
+  <FilesTable
+    @items={{selector.items}}
+    @selectedItems={{selector.selectedItems}}
+    @selectedItemsIds={{selector.selectedItemsIds}}
+    @toggleSelectItem={{selector.toggleSelectItem}}
+    data-test-table
+  />
+</Selector>
