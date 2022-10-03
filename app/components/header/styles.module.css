@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  height: 60px;
+  border-bottom: 1px solid var(--grey-200);
+}
+
+.header-select {
+  display: flex;
+  align-items: center;
+}

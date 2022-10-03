@@ -1,0 +1,30 @@
+<div local-class='header' ...attributes>
+  <div local-class='header-select' data-test-header-select>
+    <CheckboxInput
+      @checked={{@isAllSelected}}
+      @indeterminate={{@isSomeSelected}}
+      @onToggle={{@toggleSelectAll}}
+      class='mr-16'
+      data-test-header-select-checkbox
+    >
+      <:label>
+        {{#if @selectedItemsIds}}
+          Selected
+          {{@selectedItemsIds.length}}
+        {{else}}
+          None Selected
+        {{/if}}
+      </:label>
+    </CheckboxInput>
+  </div>
+
+  <button
+    type='button'
+    class='btn'
+    disabled={{if @selectedItemsIds '' 'disabled'}}
+    {{on 'click' (fn @downloadSelectedItems @selectedItems)}}
+    data-test-download-button
+  >
+    Download Selected
+  </button>
+</div>
