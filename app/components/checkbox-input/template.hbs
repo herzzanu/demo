@@ -1,0 +1,16 @@
+{{#let (unique-id) as |id|}}
+  <input
+    type='checkbox'
+    checked={{@checked}}
+    id={{id}}
+    {{on 'input' @onToggle}}
+    local-class='checkbox {{if @indeterminate "indeterminate"}}'
+    ...attributes
+  />
+
+  {{#if (has-block 'label')}}
+    <label for={{id}} data-test-checkbox-label>
+      {{yield to='label'}}
+    </label>
+  {{/if}}
+{{/let}}
