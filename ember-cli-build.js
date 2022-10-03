@@ -1,10 +1,20 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const CssImport = require('postcss-import');
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
-    // Add options here
+    postcssOptions: {
+      compile: {
+        plugins: [{ module: CssImport }],
+      },
+    },
+
+    cssModules: {
+      extension: 'module.css',
+      intermediateOutputPath: 'app/styles/css-modules.css',
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
