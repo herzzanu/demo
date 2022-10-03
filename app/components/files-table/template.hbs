@@ -1,0 +1,20 @@
+<Table @items={{@items}} ...attributes>
+  <:header>
+    <tr data-test-header-row>
+      <th scope='col'></th>
+      <th scope='col' align='left' data-test-name>Name</th>
+      <th scope='col' align='left' data-test-device>Device</th>
+      <th scope='col' align='left' data-test-path>Path</th>
+      <th scope='col' align='left' data-test-status>Status</th>
+    </tr>
+  </:header>
+
+  <:row as |item index|>
+    <FilesTable::Row
+      @item={{item}}
+      @isSelected={{includes item.id @selectedItemsIds}}
+      @toggleSelectItem={{@toggleSelectItem}}
+      data-test-row={{index}}
+    />
+  </:row>
+</Table>
